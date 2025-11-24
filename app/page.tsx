@@ -1,95 +1,69 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+import { Container, Row, Col, Card, Carousel, Button } from 'react-bootstrap';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Container>
+      <Row className="mb-5 text-center">
+        <Col>
+          <h1 className="display-4">Jasa Rakit & Servis PC</h1>
+          <p className="lead"> Darrell Adrianne Cahyadi | 535240011 </p>
+          <p className="text-muted">Jasa Rakit PC Gaming & Office serta Perbaikan Hardware</p>
+          <Link href="/services">
+            <Button variant="primary" size="lg">Lihat Layanan Kami</Button>
+          </Link>
+        </Col>
+      </Row>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Row className="mb-5 justify-content-center">
+        <Col md={10}>
+          <Card>
+            <Card.Header>Rakitan & Servis</Card.Header>
+            <Card.Body>
+              <Carousel>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://geekawhat.com/wp-content/uploads/2024/07/FI_Cougar-FV270-RTX-4090-Build.jpg"
+                    alt="Gaming Build"
+                    style={{ height: '500px', objectFit: 'cover' }}
+                  />
+                  <Carousel.Caption style={{ textShadow: '1px 1px 2px #000' }}>
+                    <h3>Ultimate Gaming Build</h3>
+                    <p>Rakitan PC High-End dengan custom water cooling.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://scontent-cgk1-1.xx.fbcdn.net/v/t1.6435-9/86870635_133088761534875_8349282480573906944_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=nuDpe14qYS8Q7kNvwHqSBbk&_nc_oc=AdkE0a51TD6_kxDmqjWMOtwZT-LQcOB9m_hz0CRB_G34AlxDNKN1soBlQFAe_56MH7Y&_nc_zt=23&_nc_ht=scontent-cgk1-1.xx&_nc_gid=GGJFhNBEwk6Fi8QMGgoW1g&oh=00_AfisXuFXTr1c7Ys_AKFnqZqaD_KaanLwUerdJd_pe_1pgw&oe=694B4C7E"
+                    alt="Office Setup"
+                    style={{ height: '500px', objectFit: 'cover' }}
+                  />
+                  <Carousel.Caption style={{ textShadow: '1px 1px 2px #000' }}>
+                    <h3>Office Productivity Setup</h3>
+                    <p>Rakitan hemat daya untuk kebutuhan kantor.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://gamerzoneme.com/wp-content/uploads/2025/04/gaming-computer-service.jpg"
+                    alt="Repair Service"
+                    style={{ height: '500px', objectFit: 'cover' }}
+                  />
+                  <Carousel.Caption style={{ textShadow: '1px 1px 2px #000' }}>
+                    <h3>Deep Cleaning & Repair</h3>
+                    <p>Layanan pembersihan debu dan ganti thermal paste.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }

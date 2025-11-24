@@ -1,0 +1,18 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Service {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  price       Int
+  category    String
+  imageUrl    String?
+}
